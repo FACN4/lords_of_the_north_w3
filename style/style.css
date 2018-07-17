@@ -1,5 +1,5 @@
 body {
-  background: url("./assets/bg.jpg") no-repeat center center fixed;
+  background: url("../assets/bg.jpg") no-repeat center center fixed;
 }
 
 header {
@@ -15,5 +15,33 @@ header {
 #main {
   margin: 0 auto;
   width: 50%;
-  background: url("./assets/bg.jpg") no-repeat center center fixed;
+  background: url("../assets/bg.jpg") no-repeat center center fixed;
+}
+img{
+  height: auto;
+  max-width: 100%;
+}
+
+#houseButton {
+
+    background:url(../assets/chooseyourhome.png) no-repeat ;
+    text-align:left;
+    white-space:nowrap;
+    overflow:hidden;
+    text-indent:-9999px;
+    width:45%;
+    height:55%;
+     border:0;
+
+}
+#characterButton{
+  background:url(../assets/Charcters.jpg) no-repeat ;
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-indent:-9999px;
+  width:40%;
+  height:55%;
+   border:0;
+
 }
