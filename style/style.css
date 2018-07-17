@@ -1,0 +1,8 @@
+body {
+  background: url("./assets/bg.jpg") no-repeat center center fixed;
+}
+
+header {
+  background: #fff;
+  padding: 20px;
+}
