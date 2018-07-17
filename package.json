@@ -1,0 +1,24 @@
+{
+  "name": "lords_of_the_north_w3",
+  "version": "1.0.0",
+  "description": "project with api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN4/lords_of_the_north_w3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN4/lords_of_the_north_w3/issues"
+  },
+  "homepage": "https://github.com/FACN4/lords_of_the_north_w3#readme",
+  "devDependencies": {
+    "nyc": "^12.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
