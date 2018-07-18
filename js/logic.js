@@ -1,5 +1,3 @@
-
-console.log(lists);
 function addListener(selector, eventName, callback) {
   document.querySelector(selector).addEventListener(eventName, callback);
 }
@@ -33,13 +31,10 @@ addListener(houseBtnId, "click", function(event) {
     lists.objectOfHouses[element.value];
 
   fetch(url, function(response) {
-
-
     //    add listener to the dropdown value and the adds
     // this command :-document.getElementById("textContent").text = fillContentOfHouse(response);
   });
 });
-
 
 // listener for characters
 addListener(characterBtnId, "click", function(event) {

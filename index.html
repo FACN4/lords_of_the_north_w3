@@ -3,18 +3,26 @@
     <meta name = "viewport" content = "width = device-width ,initial-scale = 1">
     <title>GIFs of Thrones - Game of Thrones Gif Finder</title>
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1><img class="logoImg" src="assets/logo.png" alt="Gifs Of Thrones" /></h1>
+      <p>The Premium Game of Thrones GIF Finder</p>
     </header>
     <section id="main">
-
     <h2>Search By:</h2>
-      <button id="houseButton" name="houses/">GIFs by house</button>
-      <button id="characterButton" name="characters/">GIFs by character</button>
+      <div>
+      <h3>House</h3>
+        <a id="houseButton" name="houses/" href="#selector"><img src="assets/chooseyourhome.png" alt="GIFs by house" /></a>
+      </div>
+      <div>
+      <h3>Character</h3>
+        <a id="characterButton" name="characters/" href="#selector"><img src="assets/Charcters.jpg" alt="GIFs by character" /></a>
+      </div>
+
   <select id="selector">
-  
+
   </select>
       <p id="textContent">This is dummy text that we will modify once we know which information we want in the database</p>
     <h2>Your GIF:</h2>
@@ -22,5 +30,8 @@
       <script src="./assets/listsForObjects.js"></script>
       <script src="./js/logic.js"></script>
 </section>
+<footer>
+  <p>&copy; The Lords of the North 2018 - All Rights Reserved</p>
+</footer>
   </body>
 </html>
