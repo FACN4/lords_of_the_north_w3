@@ -1,4 +1,10 @@
-document.getElementById("selector").addEventListener("click", function() {
+function removeChildren(obj) {
+  while (obj.hasChildNodes()) {
+    obj.removeChild(obj.firstChild);
+  }
+}
+
+document.getElementById("selector").addEventListener("change", function() {
   var xhr = new XMLHttpRequest();
   var searchTerm = document.getElementById("selector").value;
   var limit = 3;
@@ -12,6 +18,7 @@ document.getElementById("selector").addEventListener("click", function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       console.log(JSON.parse(xhr.responseText).data);
       var gifDrop = document.getElementById("gifsCon");
+      removeChildren(gifDrop);
       var gifz = JSON.parse(xhr.responseText).data;
       gifz.forEach(function(item) {
         var imgEl = document.createElement("img");
