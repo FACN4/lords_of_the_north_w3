@@ -1,6 +1,6 @@
 document.getElementById("search").addEventListener("click", function() {
   var xhr = new XMLHttpRequest();
-  var searchTerm = document.getElementById("userSearch").value;
+  var dropDown = document.getElementById("selector").value;
   var url =
     "http://api.giphy.com/v1/gifs/search?q=" +
     searchTerm +
