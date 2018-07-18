@@ -28,7 +28,7 @@ function getGifApi(value) {
   var url =
     "http://api.giphy.com/v1/gifs/search?q=" +
     value +
-    "&api_key=dc6zaTOxFJmzC" +
+    "&api_key=dc6zaTOxFJmzC&tag=game+of+thrones" +
     "&limit=" +
     limit;
   fetch(url, function(response) {
