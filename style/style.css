@@ -26,7 +26,7 @@ header p {
   text-align: center;
 }
 
-#main div {
+.button {
   float: left;
   width: 50%;
 }
@@ -40,13 +40,17 @@ img {
   max-width: 100%;
 }
 
-#main div img {
+.button img {
   opacity: 0.6;
   max-height: 375px;
 }
 
-#main div img:hover {
+.button img:hover {
   opacity: 1;
+}
+
+#gifsCon {
+  text-align: center;
 }
 
 /* Header */
@@ -76,6 +80,7 @@ h3 {
 /* Footer */
 
 footer {
+  clear: both;
   background: #000;
   color: #fff;
   margin: 0;

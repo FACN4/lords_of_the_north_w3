@@ -1,11 +1,13 @@
 document.getElementById("selector").addEventListener("click", function() {
-  console.log("selector");
   var xhr = new XMLHttpRequest();
   var searchTerm = document.getElementById("selector").value;
+  var limit = 3;
   var url =
     "http://api.giphy.com/v1/gifs/search?q=" +
     searchTerm +
-    "&api_key=dc6zaTOxFJmzC";
+    "&api_key=dc6zaTOxFJmzC" +
+    "&limit=" +
+    limit;
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       console.log(JSON.parse(xhr.responseText).data);
