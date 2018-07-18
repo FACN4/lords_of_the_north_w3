@@ -5,7 +5,7 @@ function addListener(selector, eventName, callback) {
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
 
-  xhr.addEventListener("load", function() {
+  xhr.onreadystatechange("load", function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var response = JSON.parse(xhr.responseText);
       return callback(response);
@@ -20,10 +20,27 @@ var houseBtnId = "#houseButton";
 var characterBtnId = "#characterButton";
 var selector = document.getElementById("selector");
 
+//takes the object of houses from the assets file and adds the house names to the  list
+
+function removeChildren(obj) {
+  while (obj.hasChildNodes()) {
+    obj.removeChild(obj.firstChild);
+  }
+}
+
+function fillOptions(element, obj) {
+  removeChildren(element);
+  for (let key in obj) {
+    var opt = document.createElement("option");
+    opt.text = key;
+    element.appendChild(opt);
+  }
+}
+
 // listener for houses
 addListener(houseBtnId, "click", function(event) {
   var element = document.querySelector(houseBtnId);
-  fillOptionForHouses(selector, lists.objectOfHouses);
+  fillOptions(selector, lists.objectOfHouses);
 
   var url =
     "https://www.anapioficeandfire.com/api/" +
@@ -39,6 +56,8 @@ addListener(houseBtnId, "click", function(event) {
 // listener for characters
 addListener(characterBtnId, "click", function(event) {
   var element = document.querySelector(characterBtnId);
+  fillOptions(selector, lists.objectOfCharacters);
+
   var url =
     "https://www.anapioficeandfire.com/api/" +
     element.name +
@@ -59,13 +78,4 @@ function fillContentOfHouse(obj) {
   str += obj.titles + "<br>";
   str += obj.ancestralWeapons + "<br>";
   return str;
-}
-//takes the object of houses from the assets file and adds the house names to the  list
-function fillOptionForHouses(element, obj) {
-  for (let key in obj) {
-    console.log(typeof key);
-    var opt = document.createElement("option");
-    opt.text = key;
-    element.appendChild(opt);
-  }
 }
