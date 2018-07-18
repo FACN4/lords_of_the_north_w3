@@ -53,6 +53,12 @@ img {
   text-align: center;
 }
 
+#gifsCon img {
+  max-height: 300px;
+  width: auto;
+  margin: 5px;
+}
+
 /* Header */
 
 .logoImg {
