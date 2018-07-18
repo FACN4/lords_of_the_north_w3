@@ -54,7 +54,12 @@ function fillOptions(element, obj) {
 
 addListener("#selector", "change", function(event) {
   var name = document.getElementById("selector").value;
-  var id = lists.objectOfHouses[document.getElementById("selector").value];
+  if (house) {
+    var id = lists.objectOfHouses[document.getElementById("selector").value];
+  } else {
+    var id =
+      lists.objectOfCharacters[document.getElementById("selector").value];
+  }
   getGotApi(id);
   getGifApi(name);
 });

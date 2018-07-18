@@ -54,6 +54,8 @@ img {
 }
 
 #gifsCon img {
+  max-height: 300px;
+  width: auto;
   margin: 5px;
 }
 
