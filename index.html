@@ -3,31 +3,36 @@
     <meta name = "viewport" content = "width = device-width ,initial-scale = 1">
     <title>GIFs of Thrones - Game of Thrones Gif Finder</title>
     <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat"
+     rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1><img class="logoImg" src="assets/logo.png" alt="Gifs Of Thrones" /></h1>
+      <h1><img class="logoImg" src="assets/logo.png" alt="Gifs Of Thrones"/></h1>
       <p>The Premium Game of Thrones GIF Finder</p>
     </header>
     <section id="main">
     <h2>Search By:</h2>
       <div>
       <h3>House</h3>
-        <a id="houseButton" name="houses/" href="#selector"><img src="assets/chooseyourhome.png" alt="GIFs by house" /></a>
+        <a id="houseButton" name="houses/" href="#selector">
+          <img src="assets/chooseyourhome.png" alt="GIFs by house" /></a>
       </div>
       <div>
       <h3>Character</h3>
-        <a id="characterButton" name="characters/" href="#selector"><img src="assets/Charcters.jpg" alt="GIFs by character" /></a>
+        <a id="characterButton" name="characters/" href="#selector">
+          <img src="assets/Charcters.jpg" alt="GIFs by character" /></a>
       </div>
 
-  <select id="selector">
-
+  <select id="selector"></select>
   </select>
       <p id="textContent">Please choose a house or character to find out more about them</p>
     <h2>Your GIF:</h2>
-      <img src="https://media.giphy.com/media/11clOWGCHzWG7C/giphy.gif" alt="Game of Thrones" />
+      <img src="https://media.giphy.com/media/11clOWGCHzWG7C/giphy.gif"
+        alt="Game of Thrones" />
+      <div id= "gifsCon"></div>
       <script src="./assets/listsForObjects.js"></script>
+      <script src="./js/GiphyAPI.js" type="text/javascript"></script>
       <script src="./js/logic.js"></script>
 </section>
 <footer>
