@@ -48,6 +48,9 @@ img {
 .buttons img:hover {
   opacity: 1;
 }
+.active img{
+  opacity: 1;
+}
 
 #gifsCon {
   text-align: center;

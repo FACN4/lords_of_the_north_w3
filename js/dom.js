@@ -10,16 +10,26 @@ var house;
 // Listener to trigger filling of houses & characters
 
 addListener(houseBtnId, "click", function(event) {
-  var element = document.querySelector(houseBtnId);
+  setActiveClass(houseBtnId, characterBtnId);
   fillOptions(selector, lists.objectOfHouses);
-  var house = true;
+   house = true;
 });
 
 addListener(characterBtnId, "click", function(event) {
-  var element = document.querySelector(characterBtnId);
+  setActiveClass(characterBtnId , houseBtnId);
   fillOptions(selector, lists.objectOfCharacters);
-  var house = false;
+   house = false;
 });
+
+//This function adds and removes the active class when a button is selected.
+
+function setActiveClass(id1, id2){
+  var activeElement = document.querySelector(id1);
+  var nonActive = document.querySelector(id2);
+  nonActive.classList.remove("active");
+  activeElement.classList.add("active");
+}
+
 
 // Function to remove children before filling. Used by GIFs at the bottom before pulling new API request and by fill options function
 
@@ -60,7 +70,7 @@ addListener("#selector", "change", function(event) {
     var id =
       lists.objectOfCharacters[document.getElementById("selector").value];
   }
-  getGotApi(id);
+  getGotApi(id,house);
   getGifApi(name);
 });
 
