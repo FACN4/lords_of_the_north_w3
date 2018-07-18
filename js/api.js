@@ -23,11 +23,11 @@ function getGotApi(key) {
 
 // GIF API call
 
-function getGifApi(key) {
+function getGifApi(value) {
   var limit = 3;
   var url =
     "http://api.giphy.com/v1/gifs/search?q=" +
-    key +
+    value +
     "&api_key=dc6zaTOxFJmzC" +
     "&limit=" +
     limit;

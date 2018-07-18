@@ -41,9 +41,10 @@ function fillOptions(element, obj) {
 // Listener to call API based on change to selector
 
 addListener("#selector", "change", function(event) {
-  var key = lists.objectOfHouses[document.getElementById("selector").value];
-  getGotApi(key);
-  getGifApi(key);
+  var name = document.getElementById("selector").value;
+  var id = lists.objectOfHouses[document.getElementById("selector").value];
+  getGotApi(id);
+  getGifApi(name);
 });
 
 // Function to generate textContent for the description paragraph
