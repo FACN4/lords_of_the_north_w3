@@ -40,12 +40,12 @@ img {
   max-width: 100%;
 }
 
-#main div img {
+.buttons img {
   opacity: 0.6;
   max-height: 375px;
 }
 
-#main div img:hover {
+.buttons img:hover {
   opacity: 1;
 }
 
