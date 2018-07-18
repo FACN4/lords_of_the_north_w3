@@ -5,12 +5,12 @@ function addListener(selector, eventName, callback) {
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
 
-  xhr.onreadystatechange("load", function() {
+  xhr.onreadystatechange = function() {
     if (xhr.status === 200 && xhr.readyState == 4) {
       var response = JSON.parse(xhr.responseText);
       return callback(response);
     }
-  });
+  };
 
   xhr.open("GET", url);
   xhr.send();
@@ -53,22 +53,26 @@ addListener(houseBtnId, "click", function(event) {
   });
 });
 
-// listener for characters
-addListener(characterBtnId, "click", function(event) {
-  var element = document.querySelector(characterBtnId);
-  fillOptions(selector, lists.objectOfCharacters);
-
-  var url =
-    "https://www.anapioficeandfire.com/api/" +
-    element.name +
-    objectOfCharacters[element.value];
-
+addListener("#selector", "change", function(event) {
+  var key = lists.objectOfHouses[document.getElementById("selector").value];
+  var url = "https://www.anapioficeandfire.com/api/houses/" + key;
+  document.getElementById("selector").value;
   fetch(url, function(response) {
-    // ... do something with the response
-    // 1. loop the object
-    // 2. get : gender,culture, titles, aliases, playedBy
+    dynamicTextGeneration(response);
+  });
+
+  // listener for characters
+  addListener(characterBtnId, "click", function(event) {
+    var element = document.querySelector(characterBtnId);
+    fillOptions(selector, lists.objectOfCharacters);
   });
 });
+
+function dynamicTextGeneration(response) {
+  var textParagraph = document.getElementById("textContent");
+  textParagraph.textContent =
+    "The " + response.name + " was founded during the " + response.name;
+}
 
 //returns the needed properties from the house object
 function fillContentOfHouse(obj) {
