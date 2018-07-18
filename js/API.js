@@ -1,6 +1,7 @@
-document.getElementById("search").addEventListener("click", function() {
+document.getElementById("selector").addEventListener("click", function() {
+  console.log("selector");
   var xhr = new XMLHttpRequest();
-  var dropDown = document.getElementById("selector").value;
+  var searchTerm = document.getElementById("selector").value;
   var url =
     "http://api.giphy.com/v1/gifs/search?q=" +
     searchTerm +
@@ -8,7 +9,7 @@ document.getElementById("search").addEventListener("click", function() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       console.log(JSON.parse(xhr.responseText).data);
-      var gifDrop = document.getElementById("mahmood");
+      var gifDrop = document.getElementById("gifsCon");
       var gifz = JSON.parse(xhr.responseText).data;
       gifz.forEach(function(item) {
         var imgEl = document.createElement("img");
