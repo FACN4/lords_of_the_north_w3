@@ -48,7 +48,7 @@ img {
 .buttons img:hover {
   opacity: 1;
 }
-.active img{
+.active img {
   opacity: 1;
 }
 
@@ -59,7 +59,12 @@ img {
 #gifsCon img {
   max-height: 300px;
   width: auto;
-  margin: 5px;
+  margin: 5px auto;
+  display: block;
+}
+
+#textContent {
+  line-height: 1.5;
 }
 
 /* Header */

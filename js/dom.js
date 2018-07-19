@@ -12,24 +12,23 @@ var house;
 addListener(houseBtnId, "click", function(event) {
   setActiveClass(houseBtnId, characterBtnId);
   fillOptions(selector, lists.objectOfHouses);
-   house = true;
+  house = true;
 });
 
 addListener(characterBtnId, "click", function(event) {
-  setActiveClass(characterBtnId , houseBtnId);
+  setActiveClass(characterBtnId, houseBtnId);
   fillOptions(selector, lists.objectOfCharacters);
-   house = false;
+  house = false;
 });
 
 //This function adds and removes the active class when a button is selected.
 
-function setActiveClass(id1, id2){
+function setActiveClass(id1, id2) {
   var activeElement = document.querySelector(id1);
   var nonActive = document.querySelector(id2);
   nonActive.classList.remove("active");
   activeElement.classList.add("active");
 }
-
 
 // Function to remove children before filling. Used by GIFs at the bottom before pulling new API request and by fill options function
 
@@ -70,7 +69,7 @@ addListener("#selector", "change", function(event) {
     var id =
       lists.objectOfCharacters[document.getElementById("selector").value];
   }
-  getGotApi(id,house);
+  getGotApi(id, house);
   getGifApi(name);
 });
 
@@ -80,10 +79,30 @@ function dynamicTextGeneration(response) {
   var textParagraph = document.getElementById("textContent");
   if (house) {
     textParagraph.textContent =
-      "The " + response.name + " was founded during the " + response.name;
+      "The " +
+      response.name +
+      " known by the words '" +
+      response.words +
+      "' was founded during the " +
+      response.founded +
+      ". The house has " +
+      response.swornMembers.length +
+      " sworn members and they are based in " +
+      response.region +
+      ".";
   } else {
-    textParagraph.textContent =
-      response.name + " was founded during the " + response.name;
+    textParagraph.textContent = response.name;
+    if (response.aliases[0].length > 0) {
+      textParagraph.textContent += " AKA " + response.aliases[0];
+    }
+    if (response.culture.length > 0) {
+      textParagraph.textContent +=
+        " part of the " + response.culture + " culture";
+    }
+    if (response.born.length > 0) {
+      textParagraph.textContent += " was born " + response.born;
+    }
+    textParagraph.textContent += ".";
   }
 }
 
