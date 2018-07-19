@@ -1,4 +1,4 @@
-/* Page Structure */
+/* Default Options */
 
 body {
   background: url("../assets/bg.jpg") no-repeat center center fixed;
@@ -7,6 +7,13 @@ body {
   color: #fff;
   font-family: "Montserrat", sans-serif;
 }
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Page Header */
 
 header {
   background: #fff;
@@ -19,6 +26,13 @@ header p {
   margin: 0;
 }
 
+.logoImg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Main Section */
+
 #main {
   background: rgba(0, 0, 0, 0.5);
   width: 95%;
@@ -26,18 +40,13 @@ header p {
   text-align: center;
 }
 
-.buttons {
-  float: left;
-  width: 50%;
-}
-
 #main div::after {
   clear: both;
 }
 
-img {
-  height: auto;
-  max-width: 100%;
+.buttons {
+  float: left;
+  width: 50%;
 }
 
 .buttons img {
@@ -48,7 +57,7 @@ img {
 .buttons img:hover {
   opacity: 1;
 }
-.active img{
+.active img {
   opacity: 1;
 }
 
@@ -59,16 +68,12 @@ img {
 #gifsCon img {
   max-height: 300px;
   width: auto;
-  margin: 5px;
+  margin: 5px auto;
+  display: block;
 }
 
-/* Header */
-
-.logoImg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 48%;
+#textContent {
+  line-height: 1.5;
 }
 
 /* Headings */
@@ -118,6 +123,10 @@ footer p {
   footer p {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .logoImg {
+    max-width: 400px;
   }
 }
 
