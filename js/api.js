@@ -7,6 +7,9 @@ function fetch(url, callback) {
       var response = JSON.parse(xhr.responseText);
       return callback(response);
     }
+    else if (xhr.status != 200 && xhr.readyState == 4) {
+      console.log(xhr.status);
+    }
   };
   xhr.open("GET", url);
   xhr.send();
@@ -20,10 +23,9 @@ function getGotApi(key, house) {
   } else {
     var url = "https://www.anapioficeandfire.com/api/characters/" + key;
   }
-  console.log(url);
-  fetch(url, function(response) {
-    dynamicTextGeneration(response);
-  });
+  fetch(url, dynamicTextGeneration);
+
+
 }
 
 // GIF API call
@@ -36,7 +38,5 @@ function getGifApi(value) {
     "&api_key=dc6zaTOxFJmzC&tag=game+of+thrones" +
     "&limit=" +
     limit;
-  fetch(url, function(response) {
-    gifUpdater(response);
-  });
+  fetch(url, gifUpdater);
 }
