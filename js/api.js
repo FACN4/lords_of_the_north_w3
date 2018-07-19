@@ -20,7 +20,7 @@ function getGotApi(key, house) {
   } else {
     var url = "https://www.anapioficeandfire.com/api/characters/" + key;
   }
-  fetch(url, dynamicTextGeneration);
+  return url;
 }
 
 // GIF API call
