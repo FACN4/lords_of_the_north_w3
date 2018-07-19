@@ -1,6 +1,6 @@
 # The Lords of the North - Suha, Yoosef, Noor, Rayan & Matt
 
-Our link : https://FACN4.github.com/lords_of_the_north_w3
+Our link : https://FACN4.github.io/lords_of_the_north_w3
 
 ## Section 1. Why?
 
