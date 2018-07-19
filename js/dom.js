@@ -69,7 +69,7 @@ addListener("#selector", "change", function(event) {
     var id =
       lists.objectOfCharacters[document.getElementById("selector").value];
   }
-  getGotApi(id, house);
+  fetch(getGotApi(id, house), dynamicTextGeneration);
   getGifApi(name);
 });
 

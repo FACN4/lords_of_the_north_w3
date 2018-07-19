@@ -20,22 +20,18 @@ function getGotApi(key, house) {
   } else {
     var url = "https://www.anapioficeandfire.com/api/characters/" + key;
   }
-  fetch(url, dynamicTextGeneration);
+  return url;
 }
 
 // GIF API call
 
-function getGifApi(value, first) {
+function getGifApi(value) {
   var limit = 3;
   var url =
-    "http://api.giphy.com/v1/gifs/search?q=game_of_thrones_" +
+    "https://api.giphy.com/v1/gifs/search?q=game_of_thrones_" +
     value +
     "&api_key=dc6zaTOxFJmzC&tag=game+of+thrones" +
     "&limit=" +
     limit;
-  if (first) {
-    fetch(url, gifUpdater);
-  } else {
-    fetch(url, gifUpdater);
-  }
+  fetch(url, gifUpdater);
 }
